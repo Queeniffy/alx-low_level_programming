@@ -1,29 +1,27 @@
 #include "main.h"
 
 /**
-* rot13 - encodes a string using rot13
-* @s: input string.
-* Return: the pointer to dest.
+*leet -> a leet function
+* @x: param x
+*  Return: a string
 */
-
-char *rot13(char *s)
+char *leet(char *x)
 {
-	int count = 0, i;
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int a = 0, b, l = 5;
+	char tr[5] = {'A', 'E', 'O', 'T', 'L'};
+	char trw[5] = {'4', '3', '0', '7', '1'};
 
-	while (*(s + count) != '\0')
+	while (x[a])
 	{
-		for (i = 0; i < 52; i++)
-		{
-			if (*(s + count) == alphabet[i])
-			{
-				*(s + count) = rot13[i];
-				break;
-			}
-		}
-		count++;
-	}
+		b = 0
 
-	return (s);
+			while (b < 1)
+			{
+				if (x[a] == tr[b] || x[a] - 32 == tr[b])
+					x[a] = trw[b];
+				b++;
+			}
+		a++;
+	}
+	return (x);
 }
