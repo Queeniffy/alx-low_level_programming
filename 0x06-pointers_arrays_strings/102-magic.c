@@ -1,16 +1,9 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
- *
- * description: 'magic'
- *
- * Return: Always 0 (succss)
- */
-int main(void)
+intmain(void)
 {
 int n;
-int a[5];
+int a [5];
 int *p;
 
 a[2] = 1024;
