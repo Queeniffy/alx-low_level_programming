@@ -1,44 +1,39 @@
 #include "main.h"
-
 /**
- * jack_bauer - Prints every minute of the day of Jack Bauer,
- * starting from 00:00 to 23:59
- */
+* jack_bauer -> prints 24 hours
+*/
 void jack_bauer(void)
 {
-	int maxMinutes = 1440; /* Minutes in 24 hours */
-	int hourFirstDigit = 0; /* The first digit of the current hour */
-	int hourSecondDigit = 0; /* The second digit of the current hour */
-	int minuteFirstDigit = 0; /* The first digit of the current minute */
-	int minuteSecondDigit = 0; /* The second digit of the current minute */
-	int currentMinute = 0; /* The current minute */
+	int i, j;
 
-	while (currentMinute < maxMinutes)
+	for (i = 0; i < 24; i++)
 	{
-		_putchar(hourFirstDigit + '0');
-		_putchar(hourSecondDigit + '0');
-		_putchar(':'); /* Separator */
-		_putchar(minuteFirstDigit + '0');
-		_putchar(minuteSecondDigit + '0');
-		_putchar('\n');
-
-		minuteSecondDigit++;
-		if (minuteSecondDigit > 9)
+		for (j = 0; j < 60; j++)
 		{
-			minuteSecondDigit = 0;
-			minuteFirstDigit++;
+			if (i < 10)
+			{
+				_putchar('0');
+				_putchar(i + '0');
+			}
+			else if (i >= 10)
+			{
+				_putchar((i / 10) + '0');
+				_putchar((i % 10) + '0');
+			}
+			if (j < 10)
+			{
+				_putchar(':');
+				_putchar('0');
+				_putchar(j + '0');
+			}
+			else if (j >= 10)
+			{
+				_putchar(':');
+				_putchar((j / 10) + '0');
+				_putchar((j % 10) + '0');
+			}
+			_putchar('\n');
 		}
-		if (minuteFirstDigit > 5)
-		{
-			minuteFirstDigit = 0;
-			hourSecondDigit++;
-		}
-		if (hourSecondDigit > 9)
-		{
-			hourSecondDigit = 0;
-			hourFirstDigit++;
-		}
-		currentMinute++;
 
 	}
 }
